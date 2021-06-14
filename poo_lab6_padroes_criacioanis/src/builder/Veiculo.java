@@ -137,7 +137,7 @@ public class Veiculo {
 
 	@Override
 	public String toString() {
-		return "Marca: " + marca + "\nmodelo: " + modelo + "\nano: " + ano + "\ncor: " + cor + "\nportas: " + portas + "\njanelas: " + janelas + "\nrodas" + rodas
-				+ "\nkm: " + km + "\npotenciaEmHp: " + potenciaEmHp + "\narCondicionado: " + arCondicionado;
+		return "Marca: " + marca + "\nModelo: " + modelo + "\nAno: " + ano + "\nCor: " + cor + "\nPortas: " + portas + "\nJanelas: " + janelas + "\nRodas: " + rodas
+				+ "\nKm: " + km + "\nPotenciaEmHp: " + potenciaEmHp + "\nAr Condicionado: " + arCondicionado;
 	}
 }

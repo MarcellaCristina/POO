@@ -25,14 +25,14 @@ public class Proprietario {
 	    		builder.arCondicionado(false);
 	    	}
 	    	else if(tipo.toLowerCase().equals("importado")) {
-	    		builder.portas (2);
+	    		builder.portas (4);
 	    		builder.janelas (4);
 	    		builder.rodas (4);
-	    		builder.marca ("Renault");
-	    		builder.modelo ("Kwid");
+	    		builder.marca ("Volvo");
+	    		builder.modelo ("XC60 Recharge");
 	    		builder.ano (2020);
 	    		builder.km (0);
-	    		builder.potencialEmHp (70);
+	    		builder.potencialEmHp (407);
 	    		builder.cor ("Branco");
 	    		builder.arCondicionado(true);
 	    	}
