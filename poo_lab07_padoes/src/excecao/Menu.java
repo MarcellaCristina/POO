@@ -6,7 +6,7 @@ public class Menu {
 
 	public static void main(String[] args) {
 
-		var conta = new ContaBancaria(200);
+		var conta = new ContaBancaria(200,1);
 
 		while (true) {
 			
@@ -19,13 +19,17 @@ public class Menu {
 				JOptionPane.showMessageDialog(null,
 						"Saque efetuado com sucesso: " + valor + "\nSaldo: " + conta.getSaldo());
 
-			} catch (ValorSaqueInvalidoException ex) { // capturar as excecoes
+			} catch (EstadoContaException ex1) {
+				JOptionPane.showMessageDialog(null, ex1.getMessage());
+				
+			}catch (ValorSaqueInvalidoException ex2) { // capturar as excecoes
 				// exibir a mensagem na tela
-				JOptionPane.showMessageDialog(null, ex.getMessage());
+				JOptionPane.showMessageDialog(null, ex2.getMessage());
 			} 
-//			catch (SaldoInsuficienteException ex2) {
-//				JOptionPane.showMessageDialog(null, ex2.getMessage());
-//			}
+			catch (ValorSaldoInsuficienteException ex3) {
+				JOptionPane.showMessageDialog(null, ex3.getMessage());
+				
+			}
 			finally {
 				// encerra qualquer operação realizada no bloco try
 				System.out.println("Sempre executa");

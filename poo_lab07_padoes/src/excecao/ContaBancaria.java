@@ -6,19 +6,31 @@ public class ContaBancaria {
 	private int numOperacoes = 0;
 	private int estado; // 0: em-criacao, 1: disponivel; 2: bloqueada; 3: cancelada
 	
-	public ContaBancaria(float valor) {
+	public ContaBancaria(float valor, int estado) {
 		this.saldo = valor;
+		this.estado = estado;
 	}
 	
-	public void efetuarSaque(float valor) throws ValorSaqueInvalidoException{
+	public void efetuarSaque(float valor) throws ValorSaqueInvalidoException, ValorSaldoInsuficienteException, EstadoContaException {
+		// verificar o estado da conta bancaria (somente estado disponivel é permitido)
+		
+		if(estado != 1) {
+			throw new EstadoContaException(estado);
+			
+		}
 		// verificar valor a ser sacado > 0
 		if (valor <= 0) {
 			// lançando uma excecao para ser tratada por um tratador especifico
 			throw new ValorSaqueInvalidoException(valor);
 		}
 		// verificar saldo disponivel
+		if(valor > saldo) {
+			throw new ValorSaldoInsuficienteException(valor);
+		}
 		
-		// verificar o estado da conta bancaria (somente estado disponivel é permitido)
+	
+		
+		
 		
 		
 		// caso de sucesso.
